@@ -31,7 +31,7 @@ function getCookieIntDefault(cname, defaultval) {
 
 function onInit() {
     mjol = getCookieIntDefault("mjol", 500);
-    mjol2 = getCookieIntDefault("mjol2", 500);
+    mjol2 = getCookieIntDefault("mjol2", 15);
     vatten = getCookieIntDefault("vatten", 72);
     salt = getCookieIntDefault("salt", 3);
     levain = getCookieIntDefault("levain", 25);
@@ -52,12 +52,21 @@ function calcValues() {
     levain = parseInt(document.getElementById("levain").value);
 
     setCookie("mjol", mjol, 365);
-    setCookie("mjol2", mjol, 365);
+    setCookie("mjol2", mjol2, 365);
     setCookie("vatten", vatten, 365);
     setCookie("salt", salt, 365);
     setCookie("levain", levain, 365);
 
-    document.getElementById("vatten_value").innerHTML = (mjol + mjol2) * vatten / 100 + " g";   
-    document.getElementById("salt_value").innerHTML = (mjol + mjol2) * salt / 100 + " g";   
-    document.getElementById("levain_value").innerHTML = (mjol + mjol2) * levain / 100 + " g";   
+    levain_value = mjol * levain / 100;
+    vatten_levain = levain_value / 2;
+    mjol_levain = levain_value / 2;
+    vatten_tillsatt = vatten / 100 * (mjol + mjol_levain) - vatten_levain;
+
+    document.getElementById("vitt_mjol_value").innerHTML = mjol * (100 - mjol2) / 100 + " g";
+    document.getElementById("brunt_mjol_value").innerHTML = mjol * mjol2 / 100 + " g";
+    document.getElementById("vatten_value").innerHTML = vatten_tillsatt + " g";
+    document.getElementById("salt_value").innerHTML = mjol * salt / 100 + " g";
+    document.getElementById("levain_value").innerHTML = levain_value + " g";
+    document.getElementById("totalt_mjol").innerHTML = "( " + (mjol + mjol_levain) + " g)";
+    document.getElementById("totalt_vatten").innerHTML = "( " + (vatten_levain + vatten_tillsatt) + " g)";
 }

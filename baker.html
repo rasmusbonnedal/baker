@@ -11,29 +11,49 @@
   <script src="js/scripts.js"></script>
   <table>
     <tr>
-      <td>Mjöl</td>
+      <td>Mjöl totalt</td>
       <td><input type="number" id="mjol" onChange="calcValues();" value="500" min="0" max="10000" step="1">g</td>
       <td></td>
     </tr>
     <tr>
-      <td>Brunt mjöl</td>
-      <td><input type="number" id="mjol2" onChange="calcValues();" value="500" min="0" max="10000" step="1">g</td>
+      <td>Vitt mjöl</td>
+      <td></td>
+      <td id="vitt_mjol_value"></td>
+    </tr>
+    <tr>
+      <td>Det Bruna Mjölet</td>
+      <td><input type="number" id="mjol2" onChange="calcValues();" value="15" min="0" max="100" step="1">%</td>
+      <td id="brunt_mjol_value"></td>
+    </tr>
+    <tr>
+      <td>Vatten (inkl vatten och mjöl i surdegen)</td>
+      <td><input type="number" id="vatten" onChange="calcValues();" value="72" min="0" max="100">%</td>
       <td></td>
     </tr>
     <tr>
-      <td>Vatten</td>
-      <td><input type="number" id="vatten" onChange="calcValues();" value="72" min="0" max="100">%</td>
-      <td id="vatten_value">100 g</td>
+      <td>Tillsatt vatten</td>
+      <td></td>
+      <td id="vatten_value"></td>
     </tr>
     <tr>
       <td>Salt</td>
       <td><input type="number" id="salt" onChange="calcValues();" value="3" min="0" max="100">%</td>
-      <td id="salt_value">100 g</td>
+      <td id="salt_value"></td>
     </tr>
     <tr>
       <td>Levain</td>
       <td><input type="number" id="levain" onChange="calcValues();" value="25" min="0" max="100">%</td>
-      <td id="levain_value">100 g</td>
+      <td id="levain_value"></td>
+    </tr>
+    <tr>
+      <td>Totalt mjöl</td>
+      <td></td>
+      <td id="totalt_mjol"></td>
+    </tr>
+    <tr>
+      <td>Totalt vatten</td>
+      <td></td>
+      <td id="totalt_vatten"></td>
     </tr>
   </table>
 </body>
