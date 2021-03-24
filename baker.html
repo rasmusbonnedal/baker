@@ -1,0 +1,40 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Baker</title>
+  <link rel="stylesheet" href="css/styles.css?v=1.0">
+</head>
+
+<body>
+  <script src="js/scripts.js"></script>
+  <table>
+    <tr>
+      <td>Mjöl</td>
+      <td><input type="number" id="mjol" onChange="calcValues();" value="500" min="0" max="10000" step="1">g</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Brunt mjöl</td>
+      <td><input type="number" id="mjol2" onChange="calcValues();" value="500" min="0" max="10000" step="1">g</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Vatten</td>
+      <td><input type="number" id="vatten" onChange="calcValues();" value="72" min="0" max="100">%</td>
+      <td id="vatten_value">100 g</td>
+    </tr>
+    <tr>
+      <td>Salt</td>
+      <td><input type="number" id="salt" onChange="calcValues();" value="3" min="0" max="100">%</td>
+      <td id="salt_value">100 g</td>
+    </tr>
+    <tr>
+      <td>Levain</td>
+      <td><input type="number" id="levain" onChange="calcValues();" value="25" min="0" max="100">%</td>
+      <td id="levain_value">100 g</td>
+    </tr>
+  </table>
+</body>
+</html>
